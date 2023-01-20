@@ -63,3 +63,34 @@ function calculosCirculo(radio) {
 console.log(calculosCirculo(5));
 
 console.groupEnd('Circulo');
+
+// EJERCICIO 1:
+// - Sabiendo lo que miden los 3 lados, encontrar la altura.
+// - Debe ser un triángulo isósceles (dos lados iguales y uno diferente)
+
+function ejercicioAlturaTriangulo(lado, base) {
+    if (lado == base) {
+        console.warn('¡Error, este no es un triángulo isósceles!');
+    } else {
+        // Fórmula = raiz(lado**2 - (b**2)/4)
+        return Math.sqrt((Math.pow(lado, 2)) - ((Math.pow(base, 2))/4)).toFixed(2);
+    }
+}
+
+console.log(ejercicioAlturaTriangulo(3, 5));
+
+// EJERCICIO 2:
+// - Sabiendo lo que miden los 3 lados, encuentra la altura.
+// - Debe ser un triángulo escaleno (todos los lados diferentes).
+
+function alturaEscaleno(A, B, C) {
+    if (A == B || A == C || B == C) {
+        console.warn('¡Error, este no es un triángulo escaleno!')
+    } else {
+        const semiperimetro = (A + B + C) / 2;
+
+        return (2/A) * Math.sqrt(semiperimetro * (semiperimetro - A) * (semiperimetro - B) * (semiperimetro - C));
+    }
+}
+
+console.log(alturaEscaleno(5, 4, 2));
